@@ -3,14 +3,14 @@ module.exports = function(app, connection){
 		var sess = req.session;
 
 		res.render('index', {
-			title:"Root Page",
+			title:"Root",
 			data:null,
 			name:sess.name,
 			username:sess.username
 		});
 	});
 
-	app.get('/data', function(req, res){
+	/*app.get('/data', function(req, res){
 		connection.query('select * from test', function(err, rows){
 			var sess = req.session;
 
@@ -30,7 +30,7 @@ module.exports = function(app, connection){
 			//if(err) throw err;
 			res.json(rows);
 		});
-	});
+	});*/
 
 	app.get('/json/place', function(req, res){
 		connection.query('select * from place', function(err, rows){
