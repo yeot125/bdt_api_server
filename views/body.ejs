@@ -1,0 +1,10 @@
+<h1>test!!!</h1>
+<% if(data) { %>
+	<ul>
+		<%for (var i=0; i<data.length; i++) { %>
+			<li>
+				myId = <%= data[i].myId %>, myMessage = <%= data[i].myMessage %>, myDecimal = <%=data[i].myDecimal %>
+			</li>
+		<% } %>
+	</ul>
+<% } %>

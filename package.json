@@ -1,0 +1,19 @@
+{
+  "name": "bdt_api_server",
+  "version": "0.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "BSD",
+  "dependencies": {
+    "mysql": "~2.14.1",
+    "ejs": "~2.5.7",
+    "express-session": "~1.15.5",
+    "express": "~4.15.3",
+    "body-parser": "~1.17.2"
+  }
+}
