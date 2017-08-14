@@ -27,7 +27,7 @@ module.exports = function(app, connection){
 	});
 
 	app.get('/json/mr-result/with-url', function(req, res){
-		connection.query('select a.k as \"key\", a.v as \"value\", b.url from mr a, food_img_url b where a.k=b.name', function(err, rows){
+		connection.query('select a.k as \"key\", a.v as \"value\", b.url from mr a, food_img_url b where a.k like concat(\'%\',b.name,\'%\')', function(err, rows){
 			if(err) throw err;
 			res.json(rows);
 		});
