@@ -20,14 +20,14 @@ module.exports = function(app, connection){
 	});
 
 	app.get('/json/mr-result', function(req, res){
-		connection.query('select * from mr', function(err, rows){
+		connection.query('select k as \"name\", v as \"y\" from mr order by v desc', function(err, rows){
 			if(err) throw err;
 			res.json(rows);
 		});
 	});
 
 	app.get('/json/mr-result/with-url', function(req, res){
-		connection.query('select a.k as \"key\", a.v as \"value\", b.url from mr a, food_img_url b where a.k like concat(\'%\',b.name,\'%\')', function(err, rows){
+		connection.query('select a.k as \"key\", a.v as \"value\", b.url from mr a, food_img_url b where a.k=b.name order by a.v desc', function(err, rows){
 			if(err) throw err;
 			res.json(rows);
 		});
